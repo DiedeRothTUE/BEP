@@ -56,7 +56,7 @@ plt.savefig('downloads/fittedkernel_comparison.png', dpi=900)
 plt.figure(figsize=(10, 6))
 for num_terms, kernel_values in fits.items():
     residuals = memory_real - kernel_values
-    print(sum(residuals))
+    print(np.sum(np.abs(residuals)))
     plt.plot(tt, residuals, label=f'Residuals ({num_terms} terms)')
 
 plt.xlabel('Time')
